@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.venv/bin/python:*)",
+      "Bash(npm install)",
+      "Read(//home/**)",
+      "Bash(curl:*)",
+      "Bash(bash)",
+      "Bash(export NVM_DIR=\"$HOME/.nvm\")",
+      "Bash([ -s \"$NVM_DIR/nvm.sh\" ])",
+      "Bash(. \"$NVM_DIR/nvm.sh\")",
+      "Bash(nvm install:*)",
+      "Bash(node:*)",
+      "Bash(npm --version)",
+      "Bash(npm run dev:*)",
+      "Bash(psql:*)",
+      "Bash(pg_isready:*)",
+      "Bash(sudo -u postgres psql:*)",
+      "Bash(sudo -u postgres:*)",
+      "Bash(PGPASSWORD=1228 psql:*)",
+      "Bash(export PGPASSWORD=1228)",
+      "Bash(source:*)",
+      "Bash(python3:*)",
+      "Bash(PGPASSWORD=1228 python manage.py runserver)",
+      "Bash(redis-server:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
