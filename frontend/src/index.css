@@ -1,0 +1,129 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  ::selection {
+    @apply bg-blue-500/20 text-blue-900 dark:text-blue-100;
+  }
+}
+
+@layer components {
+  /* Glassmorphism effect */
+  .glass {
+    @apply bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl;
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  /* Custom scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-gray-800 rounded-full;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-gray-600 rounded-full hover:bg-gray-400 dark:hover:bg-gray-500;
+  }
+
+  /* Calendar styles */
+  .rrs-calendar {
+    @apply rounded-xl overflow-hidden;
+  }
+
+  .rrs-calendar .rbc-month-view,
+  .rrs-calendar .rbc-time-view,
+  .rrs-calendar .rbc-agenda-view {
+    @apply bg-transparent border-gray-200 dark:border-gray-700;
+  }
+
+  .rrs-calendar .rbc-header {
+    @apply text-gray-700 dark:text-gray-300 font-semibold py-3 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50;
+  }
+
+  .rrs-calendar .rbc-today {
+    @apply bg-blue-50 dark:bg-blue-900/20;
+  }
+
+  .rrs-calendar .rbc-off-range-bg {
+    @apply bg-gray-50 dark:bg-gray-900/50;
+  }
+
+  .rrs-calendar .rbc-date-cell {
+    @apply text-gray-600 dark:text-gray-400;
+  }
+
+  .rrs-calendar .rbc-current {
+    @apply font-bold text-blue-600 dark:text-blue-400;
+  }
+
+  .rrs-calendar .rbc-time-slot {
+    @apply border-gray-200 dark:border-gray-700;
+  }
+
+  .rrs-calendar .rbc-timeslot-group {
+    @apply border-gray-200 dark:border-gray-700;
+  }
+
+  .rrs-calendar .rbc-time-content {
+    @apply border-gray-200 dark:border-gray-700;
+  }
+
+  .rrs-calendar .rbc-day-slot .rbc-time-slot {
+    @apply border-t border-gray-100 dark:border-gray-800;
+  }
+
+  .rrs-calendar .rbc-time-header-content {
+    @apply border-l border-gray-200 dark:border-gray-700;
+  }
+
+  .rrs-calendar .rbc-time-gutter {
+    @apply text-gray-600 dark:text-gray-400;
+  }
+
+  .rrs-calendar .rbc-event {
+    @apply shadow-sm hover:shadow-md transition-shadow;
+  }
+
+  .rrs-calendar .rbc-event-label {
+    @apply text-xs;
+  }
+
+  .rrs-calendar .rbc-event-content {
+    @apply text-sm font-medium;
+  }
+
+  .rrs-calendar .rbc-selected-cell {
+    @apply bg-blue-100 dark:bg-blue-900/30;
+  }
+
+  .rrs-calendar .rbc-show-more {
+    @apply text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300;
+  }
+
+  .rrs-calendar .rbc-toolbar {
+    @apply hidden;
+  }
+}
